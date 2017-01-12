@@ -8,13 +8,13 @@ if (!$enlace) {
     die('No pudo conectarse: ' . mysql_error());
 }
 //SE CREA LA BASE DE DATOS
-/*$sql = 'CREATE DATABASE vehiculos';
+$sql = 'CREATE DATABASE vehiculos';
 if (mysql_query($sql, $enlace)) {
     echo "<meta charset='utf-8'";
     echo "Creada BBDD: seplarui\n";
 } else {
     echo 'Error al crear la base de datos: ' . mysql_error() . "\n";
-}*/
+}
 
 
 //PRIMERO ME CONECTO A LA BASE DE DATOS
