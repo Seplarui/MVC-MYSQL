@@ -10,11 +10,11 @@ $db=new PDO("mysql:host=localhost;",$usuario,$password);
 
 //CREO LA BASE DE DATOS
 
-IF($db->query("create database ceedcv
+IF($db->query("create database seplarui
 default character set utf8
 default collate utf8_general_ci;")) {
     
-    echo "<p>Creada BBDD: ceedcv</p>";
+    echo "<p>Creada BBDD: seplarui</p>";
 } else {
     $db->errorCode();
     $db->errorInfo();
@@ -22,7 +22,7 @@ default collate utf8_general_ci;")) {
 
 //CREO LAS TABLAS DE LA BASE DE DATOS
 
-if($db->query("create table ceedcv.marca(id int(5),
+if($db->query("create table seplarui.marca(id int(5),
 marca varchar(255),
 PRIMARY KEY(id)) DEFAULT CHARSET=utf8 engine=innodb;")) {
     echo "<p>Creada tabla: MARCA</p>";
@@ -31,11 +31,11 @@ PRIMARY KEY(id)) DEFAULT CHARSET=utf8 engine=innodb;")) {
     print_r($db->errorInfo());
 }
 
-if ($db->query("create table ceedcv.modelo(idmodelo int(5),
+if ($db->query("create table seplarui.modelo(idmodelo int(5),
 modelo varchar(255),
 idmarca int(5),
 PRIMARY KEY(idmodelo),
-CONSTRAINT FK_MARCA FOREIGN KEY(idmarca) REFERENCES ceedcv.marca(id)) DEFAULT CHARSET=utf8 engine=innodb"))
+CONSTRAINT FK_MARCA FOREIGN KEY(idmarca) REFERENCES seplarui.marca(id)) DEFAULT CHARSET=utf8 engine=innodb"))
 {
     echo "Creada tabla: MODELO";
 } else {
@@ -48,3 +48,20 @@ CONSTRAINT FK_MARCA FOREIGN KEY(idmarca) REFERENCES ceedcv.marca(id)) DEFAULT CH
 $db->errorInfo();
 $db->errorCode();
 ?>
+
+<html>
+    <meta charset="utf8">
+    <head><title>Gestión de Vehículos</title></head>
+    
+    <body>
+        <div align="center">
+            
+            <a href="index.php">Inicio</a>
+        
+        
+        </div>
+        
+    </body>
+    
+    
+</html>
